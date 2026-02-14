@@ -160,7 +160,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 text-star-dim text-sm font-sans z-10"
+            className="absolute bottom-8 -translate-x-1/2 text-star-dim text-sm font-sans z-10"
+            style={{ left: "46%" }}
           >
             Click a star to read a letter.
           </motion.p>
