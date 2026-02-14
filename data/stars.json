@@ -1,0 +1,333 @@
+{
+    "constellationName": "Cancer",
+    "mainStarIds": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+    ],
+    "edges": [
+        [
+            "s1",
+            "s2"
+        ],
+        [
+            "s2",
+            "s3"
+        ],
+        [
+            "s3",
+            "s4"
+        ],
+        [
+            "s3",
+            "s5"
+        ],
+        [
+            "s4",
+            "s6"
+        ]
+    ],
+    "stars": [
+        {
+            "id": "s1",
+            "position": [
+                0,
+                0.95,
+                0
+            ],
+            "message": "Cảm ơn anh vì đã khiến em cười nhiều hơn mỗi ngày. Trong rất nhiều điều của thế giới này, em chỉ chắc chắn một điều, rằng em sẽ không bao giờ quên cảm giác được anh yêu."
+        },
+        {
+            "id": "s2",
+            "position": [
+                0,
+                0.35,
+                0
+            ],
+            "message": "Tình yêu của em không hoàn hảo, nhưng em yêu anh và sẽ mãi thương anh bằng tất cả những gì trọn vẹn nhất có thể. Em mong lần này mình sẽ là người có thể xoa dịu những nỗi đau mà anh từng giấu kín, vì anh chưa bao giờ đáng phải chịu những điều tệ bạc như thế."
+        },
+        {
+            "id": "s3",
+            "position": [
+                0,
+                -0.15,
+                0
+            ],
+            "message": "Em không biết tương lai sẽ ra sao, nhưng em chắc chắn hiện tại mình muốn bước đi cùng anh. Em sẽ không thể hứa sẽ thay anh vượt qua mọi chuyện. Em chỉ hứa sẽ không bao giờ rời đi khi anh cần một người ở cạnh."
+        },
+        {
+            "id": "s4",
+            "position": [
+                -0.85,
+                -0.6,
+                0.1
+            ],
+            "message": "Nếu có lúc nào đó anh mệt, cứ để em ôm anh một chút. Dù ngoài kia có nhiều áp lực, em mong khi ở bên em, anh chỉ cần là anh. Phần còn lại, em sẽ cùng anh san sẻ."
+        },
+        {
+            "id": "s5",
+            "position": [
+                0.9,
+                -0.55,
+                -0.1
+            ],
+            "message": "Em thích cảm giác ngồi sau xe anh, xoa bụng anh, cùng nhau luyên thuyên đủ thứ chuyện trên đời. Đơn giản vì em muốn bên anh thật lâu..."
+        },
+        {
+            "id": "s6",
+            "position": [
+                -1.1,
+                -0.85,
+                0.15
+            ],
+            "message": "Em biết yêu xa không dễ dàng gì. Nhưng yêu một người mà mình không gặp hằng ngày không phải là điều gì quá tệ. Đó chỉ là bằng chứng cho thấy tình yêu không nằm trong tầm mắt, mà nó nằm trong trái tim. Em vẫn yêu anh như cách anh đang cố gắng mỗi ngày."
+        }
+    ],
+    "backgroundStars": [
+        {
+            "id": "bg1",
+            "position": [
+                2,
+                1.5,
+                1
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg2",
+            "position": [
+                -2,
+                1.2,
+                0.8
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg3",
+            "position": [
+                1.5,
+                -1,
+                -0.5
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg4",
+            "position": [
+                -1.8,
+                -0.8,
+                0.6
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg5",
+            "position": [
+                0.5,
+                2,
+                -0.2
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg6",
+            "position": [
+                -0.8,
+                1.8,
+                0.4
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg7",
+            "position": [
+                2.2,
+                0,
+                -0.8
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg8",
+            "position": [
+                -2.2,
+                0.2,
+                -0.4
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg9",
+            "position": [
+                1,
+                1.2,
+                1.2
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg10",
+            "position": [
+                -1.2,
+                0.9,
+                1
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg11",
+            "position": [
+                2.5,
+                -0.5,
+                0.5
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg12",
+            "position": [
+                -2.5,
+                -0.3,
+                0.7
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg13",
+            "position": [
+                1.8,
+                1.8,
+                -0.3
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg14",
+            "position": [
+                -1.5,
+                1.5,
+                -0.6
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg15",
+            "position": [
+                0.8,
+                -1.8,
+                0.4
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg16",
+            "position": [
+                -0.6,
+                -1.6,
+                -0.2
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg17",
+            "position": [
+                2.8,
+                0.6,
+                0.2
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg18",
+            "position": [
+                -2.6,
+                0.4,
+                -0.5
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg19",
+            "position": [
+                1.2,
+                -1.2,
+                1.2
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg20",
+            "position": [
+                -1.4,
+                -1.4,
+                0.8
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg21",
+            "position": [
+                2,
+                2.2,
+                0.4
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg22",
+            "position": [
+                -2.2,
+                2,
+                -0.2
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg23",
+            "position": [
+                2.4,
+                -1.4,
+                -0.4
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg24",
+            "position": [
+                -2.3,
+                -1.2,
+                0.3
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg25",
+            "position": [
+                0.3,
+                2.4,
+                0.6
+            ],
+            "state": "locked"
+        },
+        {
+            "id": "bg26",
+            "position": [
+                -0.5,
+                2.2,
+                -0.4
+            ],
+            "state": "locked"
+        }
+    ],
+    "finalMessage": {
+        "title": "Happy Valentine's",
+        "body": "Chính thức ở bên nhau rồi, em mới nhận ra: yêu không phải điều gì quá lớn lao, chỉ là cảm giác muốn chia sẻ nhiều hơn mỗi ngày. Em muốn kể anh nghe về những điều nhỏ nhặt, muốn nghe anh nói về một ngày của anh, và thật sự muốn ở cạnh anh nhiều hơn một chút so với hôm qua. Em mong rằng mình sẽ cho nhau đủ thời gian để hiểu, đủ kiên nhẫn để sửa, đủ bao dung để chấp nhận và ở lại khi có khác biệt. Nếu có lúc em còn vụng về trong việc yêu, em mong anh đừng buồn. Em đang học cách yêu anh mỗi ngày, bằng tất cả sự chân thành mà em có.\n\nCảm ơn anh thật nhiều vì đã đến và cho em cơ hội được ở lại trong cuộc đời anh. Ở bên anh, mọi thứ đối với em đều vừa đủ: đủ bình an, đủ ấm áp, đủ vui vẻ, đủ động lực để muốn cố gắng mỗi ngày. Mong rằng tình cảm này không ồn ào, không vội vã, chỉ lặng lẽ đồng hành cùng nhau qua năm tháng. \n\n- Always"
+    },
+    "easterEgg": {
+        "title": "240126",
+        "body": "Có những lúc em nhìn anh rất lâu, chỉ để nhớ rằng: người trước mặt em là người em muốn cùng đồng hành qua những năm tháng sau này. Cảm ơn anh vì đã đến, và vì đã chọn em giữa rất nhiều sự lựa chọn ngoài kia. Cảm ơn anh vì những quan tâm nhỏ, những lần lặng lẽ bảo vệ em theo cách của anh, và cả những lần anh cố gắng hiểu em hơn.\n\nCảm ơn anh vì đã cho em một người để tin tưởng và dựa vào. Em mong mình sẽ còn nhiều kỷ niệm nữa. Em yêu anh nhiều 💞💞💞."
+    }
+}
