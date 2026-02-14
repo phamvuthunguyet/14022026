@@ -44,7 +44,7 @@ export function LetterModal({ isOpen, onClose, body }: LetterModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/50 backdrop-blur-md"
+            className="absolute inset-0 bg-black/25 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -56,6 +56,7 @@ export function LetterModal({ isOpen, onClose, body }: LetterModalProps) {
             exit={{ opacity: 0, scale: 0.97, y: 12 }}
             transition={{ type: "spring", damping: 28, stiffness: 280 }}
             className="paper relative z-10 w-full max-w-2xl max-h-[88vh] flex flex-col rounded-2xl overflow-hidden shadow-2xl"
+            style={{ background: "rgba(22, 22, 42, 0.72)" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Floating close — no header bar */}
