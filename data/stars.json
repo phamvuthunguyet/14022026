@@ -302,24 +302,6 @@
                 0.3
             ],
             "state": "locked"
-        },
-        {
-            "id": "bg25",
-            "position": [
-                0.3,
-                2.4,
-                0.6
-            ],
-            "state": "locked"
-        },
-        {
-            "id": "bg26",
-            "position": [
-                -0.5,
-                2.2,
-                -0.4
-            ],
-            "state": "locked"
         }
     ],
     "finalMessage": {

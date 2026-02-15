@@ -27,12 +27,18 @@ export default function HomePage() {
   const [formationProgress, setFormationProgress] = useState(0);
   const [letterStar, setLetterStar] = useState<StarData | null>(null);
   const [showFinalMessage, setShowFinalMessage] = useState(false);
+  const [finalMessageDismissed, setFinalMessageDismissed] = useState(false);
   const [easterEggTriggered, setEasterEggTriggered] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(true);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const codeRef = useRef({ sequence: "", lastAt: 0 });
+  const spaceHoldRef = useRef({
+    timerId: null as ReturnType<typeof setTimeout> | null,
+  });
+  const canReopenFinalRef = useRef(false);
   const CODE = "240126";
   const CODE_TIMEOUT_MS = 3000;
+  const SPACE_HOLD_MS = 600;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -57,6 +63,35 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
+    const ref = spaceHoldRef;
+    const handleSpaceDown = (e: KeyboardEvent) => {
+      if (e.key !== " " || e.repeat) return;
+      e.preventDefault();
+      ref.current.timerId = setTimeout(() => {
+        if (canReopenFinalRef.current) setShowFinalMessage(true);
+        ref.current.timerId = null;
+      }, SPACE_HOLD_MS);
+    };
+    const handleSpaceUp = (e: KeyboardEvent) => {
+      if (e.key !== " ") return;
+      e.preventDefault();
+      const timerId = ref.current.timerId;
+      if (timerId) {
+        clearTimeout(timerId);
+        ref.current.timerId = null;
+      }
+    };
+    window.addEventListener("keydown", handleSpaceDown);
+    window.addEventListener("keyup", handleSpaceUp);
+    return () => {
+      window.removeEventListener("keydown", handleSpaceDown);
+      window.removeEventListener("keyup", handleSpaceUp);
+      const timerId = ref.current.timerId;
+      if (timerId) clearTimeout(timerId);
+    };
+  }, []);
+
+  useEffect(() => {
     fetch("/api/stars")
       .then((res) => res.json())
       .then((data: StarsConfig) => setConfig(data))
@@ -74,6 +109,12 @@ export default function HomePage() {
     openedCount,
     mainStarIds: _m,
   } = useStarProgress(mainStarIds);
+
+  useEffect(() => {
+    canReopenFinalRef.current =
+      (allOpened && !!config?.finalMessage) ||
+      (easterEggTriggered && !!config?.easterEgg);
+  }, [allOpened, config, easterEggTriggered]);
 
   useEffect(() => {
     if (!allOpened || phase !== "exploring") return;
@@ -94,13 +135,14 @@ export default function HomePage() {
       if (t < 1) requestAnimationFrame(tick);
       else {
         setPhase("complete");
-        setShowFinalMessage(true);
+        if (!finalMessageDismissed) setShowFinalMessage(true);
       }
     };
     requestAnimationFrame(tick);
-  }, [phase]);
+  }, [phase, finalMessageDismissed]);
 
   const handleLetterOpen = useCallback((star: StarData) => {
+    setShowFinalMessage(false);
     setLetterStar(star);
     setPhase("letter-open");
   }, []);
@@ -120,6 +162,7 @@ export default function HomePage() {
     setFormationProgress(0);
     setLetterStar(null);
     setShowFinalMessage(false);
+    setFinalMessageDismissed(false);
     setEasterEggTriggered(false);
     setShowOnboarding(true);
     setShowResetConfirm(false);
@@ -164,6 +207,20 @@ export default function HomePage() {
             style={{ left: "46%" }}
           >
             Click a star to read a letter.
+          </motion.p>
+        )}
+      </AnimatePresence>
+
+      {/* Hint: hold Space to reopen final message after "Keep exploring" */}
+      <AnimatePresence>
+        {phase === "complete" && finalMessageDismissed && !showFinalMessage && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 text-star-dim text-xs font-sans z-10"
+          >
+            Hold Space to reopen the final message
           </motion.p>
         )}
       </AnimatePresence>
@@ -215,6 +272,7 @@ export default function HomePage() {
 
       {/* Letter modal */}
       <LetterModal
+        key={letterStar?.id ?? "closed"}
         isOpen={!!letterStar}
         onClose={handleLetterClose}
         body={letterStar?.message ?? ""}
@@ -257,6 +315,7 @@ export default function HomePage() {
                   type="button"
                   onClick={() => {
                     setShowFinalMessage(false);
+                    setFinalMessageDismissed(true);
                     setEasterEggTriggered(false);
                   }}
                   className="px-4 py-2 rounded-lg font-sans text-star-soft hover:text-star-bright hover:bg-white/5 transition-colors"
